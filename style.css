@@ -5,3 +5,10 @@ body {
 .title {
   color: white;
 }
+#black-box {
+  height: 100vw;
+}
+
+.points {
+  color: white;
+}
