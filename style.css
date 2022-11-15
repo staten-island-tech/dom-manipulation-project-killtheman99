@@ -7,8 +7,20 @@ body {
 }
 #black-box {
   height: 100vw;
+  color: white;
 }
 
 .points {
   color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  margin: 0px auto;
+}
+
+.words {
+  height: 20px;
+  margin: auto auto;
 }

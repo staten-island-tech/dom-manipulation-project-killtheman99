@@ -4,6 +4,7 @@ const DOMSelectors = {
   box: document.getElementById("black-box"),
   points: document.querySelectorAll(".points"),
   input: document.querySelector("#input"),
+  button2: document.getElementById("btn2"),
 };
 
 function backgroundandtext(background, text) {
@@ -12,7 +13,7 @@ function backgroundandtext(background, text) {
   text.style.fontSize = "30px";
 }
 
-DOMSelectors.button.addEventListener("click", function () {
+DOMSelectors.button2.addEventListener("click", function () {
   backgroundandtext(DOMSelectors.box, DOMSelectors.text);
 });
 
@@ -26,3 +27,8 @@ function changeLi() {
   });
 }
 changeLi();
+
+DOMSelectors.button.addEventListener("click", function () {
+  let input = DOMSelectors(input, input2).value;
+  console.log(input);
+});
