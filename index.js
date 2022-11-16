@@ -21,11 +21,7 @@ DOMSelectors.button2.addEventListener("click", function () {
 DOMSelectors.button.addEventListener("click", function () {
   let input = DOMSelectors.input.value;
   let input2 = DOMSelectors.input2.value;
-  DOMSelectors.box.insertAdjacentHTML(
-    "afterend",
-    `<p>${input}</p>`,
-    `<p>${input2}</p>`
-  );
+  DOMSelectors.box.insertAdjacentHTML("afterend", `<p>${input} ${input2}</p>`);
   DOMSelectors.input.value = "";
   DOMSelectors.input2.value = "";
 });
