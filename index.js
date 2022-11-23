@@ -19,29 +19,36 @@ DOMSelectors.button2.addEventListener("click", function () {
   backgroundandtext(DOMSelectors.box, DOMSelectors.text);
 });
 
+DOMSelectors.input.addEventListener("submit", function(event){
+  event.preventDefault();
+  output();
+});
+
 DOMSelectors.button.addEventListener("click", function () {
   let input = DOMSelectors.input.value;
   let input2 = DOMSelectors.input2.value;
   DOMSelectors.box.insertAdjacentHTML(
     "afterend",
-    `<p class="name">${input} ${input2}</p>`
+    `<p class="name">${input} ${input2}</p>
+    <button class= "remove btn" id= "btn" >Remove name</button>`
   );
   DOMSelectors.input.value = "";
   DOMSelectors.input2.value = "";
 });
+
+function card(){
+  let remove = document.querySelectorAll(".remove");
+  remove.forEach((el) =>{
+  el.addEventListener("click", function(el){
+this.parentElement.remove();
+  });
+  });
+}
+
 
 DOMSelectors.button3.addEventListener("click", function () {
   let nametags = document.querySelectorAll(".name");
   nametags.forEach((name) => name.remove());
 });
 
-function changeLi() {
-  let pointindex = 1;
-  DOMSelectors.points.forEach((point) => {
-    point.addEventListener("click", function () {
-      point.textContent = `hello I am point ${pointindex}`;
-      pointindex++;
-    });
-  });
-}
-changeLi();
+
