@@ -9,46 +9,34 @@ const DOMSelectors = {
   button3: document.getElementById("btn3"),
 };
 
-function backgroundandtext(background, text) {
-  background.style.backgroundColor = "blue";
-  text.textContent = "This is now a blue box";
-  text.style.fontSize = "30px";
-}
-
-DOMSelectors.button2.addEventListener("click", function () {
-  backgroundandtext(DOMSelectors.box, DOMSelectors.text);
-});
-
-DOMSelectors.input.addEventListener("submit", function(event){
-  event.preventDefault();
-  output();
-});
-
 DOMSelectors.button.addEventListener("click", function () {
   let input = DOMSelectors.input.value;
   let input2 = DOMSelectors.input2.value;
   DOMSelectors.box.insertAdjacentHTML(
     "afterend",
-    `<p class="name">${input} ${input2}</p>
-    <button class= "remove btn" id= "btn" >Remove name</button>`
+
+    `<div><p class="name">${input} ${input2}</p>
+    <button class= "remove" id= "btn4" >Remove name</button>
+    </div>`
   );
   DOMSelectors.input.value = "";
   DOMSelectors.input2.value = "";
+  let remove = document.getElementById("btn4");
+  console.log(remove);
+  remove.addEventListener("click", function (remove) {
+    remove.parentElement.remove();
+  });
 });
 
-function card(){
-  let remove = document.querySelectorAll(".remove");
-  remove.forEach((el) =>{
-  el.addEventListener("click", function(el){
-this.parentElement.remove();
-  });
+function card() {
+  remove.forEach((remove) => {
+    remove.addEventListener("click", function (obj) {
+      obj.parentElement.remove();
+    });
   });
 }
-
 
 DOMSelectors.button3.addEventListener("click", function () {
   let nametags = document.querySelectorAll(".name");
   nametags.forEach((name) => name.remove());
 });
-
-
