@@ -16,31 +16,29 @@ DOMSelectors.button.addEventListener("click", function () {
   DOMSelectors.box.insertAdjacentHTML(
     "afterend",
 
-    `<div><p class="name">${input} ${input2}</p>
+    `<div id="conatiner><p class="name">${input} ${input2}</p>
     <button class= "remove" id= "btn4" >Remove name</button>
     </div>`
   );
+  let container = document.getElementById("conatiner");
+  let Remove = document.getElementById("btn4");
   DOMSelectors.input.value = "";
   DOMSelectors.input2.value = "";
-  let remove = document.querySelectorAll(".remove");
-  remove.forEach((remove) => {
-    remove.addEventListener("click", function () {
-      let thingy = document.querySelectorAll(".thingy");
-      remove.remove();
-      thingy.remove();
-    });
+  let remov = document.querySelectorAll(".remove");
+  remov.addEventListener("click", function () {
+    container.remove();
   });
+});
 
-  //function card() {
-  //remove.forEach((remove) => {
-  // remove.addEventListener("click", function (obj) {
-  // obj.parentElement.remove();
-  // });
-  // });
-  //}
+//function card() {
+//remove.forEach((remove) => {
+// remove.addEventListener("click", function (obj) {
+// obj.parentElement.remove();
+// });
+// });
+//}
 
-  DOMSelectors.button3.addEventListener("click", function () {
-    let nametags = document.querySelectorAll(".name");
-    nametags.forEach((name) => name.remove());
-  });
+DOMSelectors.button3.addEventListener("click", function () {
+  let nametags = document.querySelectorAll(".name");
+  nametags.forEach((name) => name.remove());
 });
