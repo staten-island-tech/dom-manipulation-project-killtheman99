@@ -16,16 +16,15 @@ DOMSelectors.button.addEventListener("click", function () {
   DOMSelectors.box.insertAdjacentHTML(
     "afterend",
 
-    `<div id="conatiner><p class="name">${input} ${input2}</p>
+    `<div id="conatiner"><p class="name">${input} ${input2}</p>
     <button class= "remove" id= "btn4" >Remove name</button>
     </div>`
   );
   let container = document.getElementById("conatiner");
-  let Remove = document.getElementById("btn4");
+  let remove = document.getElementById("btn4");
   DOMSelectors.input.value = "";
   DOMSelectors.input2.value = "";
-  let remov = document.querySelectorAll(".remove");
-  remov.addEventListener("click", function () {
+  remove.addEventListener("click", function () {
     container.remove();
   });
 });
